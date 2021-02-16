@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct BestFoodApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BestFoodTabView()
         }
     }
+    
 }
