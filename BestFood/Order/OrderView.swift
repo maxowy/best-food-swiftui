@@ -13,30 +13,36 @@ struct OrderView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(viewModel.items) { item in
-                        HStack {
-                            Text(item.name)
-                            Spacer()
-                            Text(item.priceText)
+            ZStack {
+                VStack {
+                    List {
+                        ForEach(viewModel.items) { item in
+                            HStack {
+                                Text(item.name)
+                                Spacer()
+                                Text(item.priceText)
+                            }
                         }
+                        .onDelete(perform: viewModel.removeItem)
                     }
-                    .onDelete(perform: viewModel.removeItem)
+                    Spacer()
+                    Button { print("Ok") }
+                        label: {
+                            Text("Place order \(viewModel.totalValue)")
+                                .fontWeight(.bold)
+                                .frame(width: 200, height: 40)
+                                .foregroundColor(.white)
+                                .background(Color.primary)
+                        }
+                        .cornerRadius(8)
+                        .padding()
                 }
-                Spacer()
-                Button { print("Ok") }
-                    label: {
-                        Text("Place order \(viewModel.totalValue)")
-                            .fontWeight(.bold)
-                            .frame(width: 200, height: 40)
-                            .foregroundColor(.white)
-                            .background(Color.primary)
-                    }
-                    .cornerRadius(8)
-                    .padding()
+                .navigationTitle("Order")
+                if viewModel.items.isEmpty {
+                    EmptyView(imageName: "cart", message: "No items found")
+                }
             }
-            .navigationTitle("Order")
+            
         }
     }
     

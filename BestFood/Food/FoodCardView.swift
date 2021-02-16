@@ -15,8 +15,7 @@ struct FoodCardView: View {
     
     var body: some View {
         VStack {
-            Image(viewModel.imageUrl)
-                .resizable()
+            FoodImage(urlString: viewModel.imageUrl)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 300, height: 200)
             Text(viewModel.name)

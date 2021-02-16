@@ -21,7 +21,7 @@ struct BestFoodTabView: View {
                     Image(systemName: "bag")
                     Text("Order")
                 }
-            ProfileView()
+            ProfileView(viewModel: ProfileViewModel())
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")

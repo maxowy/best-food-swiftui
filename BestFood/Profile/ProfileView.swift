@@ -9,8 +9,33 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @ObservedObject var viewModel: ProfileViewModel
+    
     var body: some View {
-        Text("Profile view")
+        NavigationView {
+            Form {
+                Section(header: Text("Personal info")) {
+                    TextField("First name", text: $viewModel.firstName)
+                    TextField("Last name", text: $viewModel.lastName)
+                    TextField("Email address", text: $viewModel.email)
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
+                    DatePicker("Birthday", selection: $viewModel.birthday, displayedComponents: .date)
+                    Toggle("Subscriber:", isOn: $viewModel.subscriber)
+                        .toggleStyle(SwitchToggleStyle(tint: .primary))
+                }
+                if viewModel.subscriber {
+                    Section(header: Text("Payments info")) {
+                        TextField("Card number", text: $viewModel.cardNumber)
+                        TextField("CVV", text: $viewModel.cardCvv)
+                        DatePicker("Expiration date", selection: $viewModel.cardExpirationDate, displayedComponents: .date)
+                    }
+                }
+            }
+            .navigationTitle("Profile")
+        }
+        
     }
     
 }
@@ -18,7 +43,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ProfileView()
+        ProfileView(viewModel: ProfileViewModel())
     }
     
 }
