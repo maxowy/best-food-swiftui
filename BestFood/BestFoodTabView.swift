@@ -11,7 +11,7 @@ struct BestFoodTabView: View {
     
     var body: some View {
         TabView {
-            FoodListView(viewModel: FoodListViewModel())
+            FoodListView(viewModel: FoodListViewModel(foodService: HttpFoodService()))
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Food")
