@@ -35,7 +35,7 @@ final class FoodListViewModel: ObservableObject {
         food = foodModel.map { FoodViewModel(id: $0.id, name: $0.name, description: $0.description, price: $0.price, imageUrl: $0.imageUrl) }
     }
     
-    private func onComplete(_ completion: Subscribers.Completion<Error>) {
+    private func onComplete(_ completion: Subscribers.Completion<HttpClientError>) {
         isLoading = false
         if case .failure(let error) = completion {
             print(error)

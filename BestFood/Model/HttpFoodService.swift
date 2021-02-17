@@ -10,15 +10,10 @@ import Combine
 
 struct HttpFoodService: FoodService {
     
-    private let url = URL(string: "https://raw.githubusercontent.com/landrzejewski/best-food-swiftui/main/extras/data.json")!
+    private let url = "https://raw.githubusercontent.com/landrzejewski/best-food-swiftui/main/extras/data.json"
    
-    func getFood() -> AnyPublisher<[FoodModel], Error> {
-        URLSession.shared
-            .dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: [FoodModel].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+    func getFood() -> AnyPublisher<[FoodModel], HttpClientError> {
+        URLSession.shared.request(forUrl: url)
     }
     
 }
