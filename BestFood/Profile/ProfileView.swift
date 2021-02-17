@@ -21,6 +21,8 @@ struct ProfileView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                         .disableAutocorrection(true)
+                    SecureField("Password", text: $viewModel.password)
+                    SecureField("Password confirmation", text: $viewModel.passwordConfirmation)
                     DatePicker("Birthday", selection: $viewModel.birthday, displayedComponents: .date)
                     Toggle("Subscriber:", isOn: $viewModel.subscriber)
                         .toggleStyle(SwitchToggleStyle(tint: .primary))
@@ -33,6 +35,7 @@ struct ProfileView: View {
                     }
                 }
             }
+            .border(viewModel.isValid ? Color.black : Color.red)
             .navigationTitle("Profile")
         }
         

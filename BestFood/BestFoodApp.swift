@@ -12,7 +12,7 @@ struct BestFoodApp: App {
     
     var body: some Scene {
         WindowGroup {
-            BestFoodTabView()
+            BestFoodTabView().environmentObject(OrderModel())
         }
     }
     

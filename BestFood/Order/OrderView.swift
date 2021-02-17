@@ -10,25 +10,26 @@ import SwiftUI
 struct OrderView: View {
     
     @ObservedObject var viewModel: OrderViewModel
+    @EnvironmentObject var order: OrderModel
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     List {
-                        ForEach(viewModel.items) { item in
+                        ForEach(order.entries) { entry in
                             HStack {
-                                Text(item.name)
+                                Text(entry.name)
                                 Spacer()
-                                Text(item.priceText)
+                                Text(viewModel.getTotalValue(order: order))
                             }
                         }
-                        .onDelete(perform: viewModel.removeItem)
+                        .onDelete(perform: order.removeEntry)
                     }
                     Spacer()
                     Button { print("Ok") }
                         label: {
-                            Text("Place order \(viewModel.totalValue)")
+                            Text("Place order \(viewModel.getTotalValue(order: order))")
                                 .fontWeight(.bold)
                                 .frame(width: 200, height: 40)
                                 .foregroundColor(.white)
@@ -38,11 +39,10 @@ struct OrderView: View {
                         .padding()
                 }
                 .navigationTitle("Order")
-                if viewModel.items.isEmpty {
+                if order.entries.isEmpty {
                     EmptyView(imageName: "cart", message: "No items found")
                 }
             }
-            
         }
     }
     
