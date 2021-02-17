@@ -1,0 +1,5 @@
+- Posprzątać kod (cutom views, extensions, computed properties)
+- Dodać ekran logowania
+- Dodać zakładkę z listą restauracji (grid) z możliwością zobaczenia szczegółów (NavigationView, NavigationLink)
+- Na karcie szczegółów restauracji powinna być możliwośc dodawania komentarzy
+
