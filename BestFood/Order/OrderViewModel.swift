@@ -13,4 +13,8 @@ final class OrderViewModel: ObservableObject {
         "\(order.entries.reduce(0) { $0 + $1.price }) zł"
     }
     
+    func formatPrice(_ price: Double) -> String {
+        "\(price) zł"
+    }
+    
 }

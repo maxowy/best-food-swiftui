@@ -21,7 +21,7 @@ struct OrderView: View {
                             HStack {
                                 Text(entry.name)
                                 Spacer()
-                                Text(viewModel.getTotalValue(order: order))
+                                Text(viewModel.formatPrice(entry.price))
                             }
                         }
                         .onDelete(perform: order.removeEntry)
