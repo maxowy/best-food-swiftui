@@ -29,21 +29,22 @@ extension URLSession {
         .eraseToAnyPublisher()
     }
     
-    func post<Body: Encodable, Response: Decodable>(to urlString: String, body: Body, encoder: JSONEncoder = JSONEncoder(), decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response, HttpClientError> {
+    func post<Body: Encodable>(to urlString: String, body: Body, encoder: JSONEncoder = JSONEncoder()) -> AnyPublisher<Void, HttpClientError> {
         return url(urlString).zip(encode(body: body, encoder: encoder))
             .map(createRequest(for:data:))
             .flatMap { [self] (request: URLRequest) in
                 dataTaskPublisher(for: request)
-                    .map { $0.data }
-                    .decode(type: Response.self, decoder: decoder)
                     .mapError { _ in HttpClientError.requestFailed }
+                    .print()
                     .receive(on: DispatchQueue.main)
             }
+            .map { _ in Empty<Void, HttpClientError>() }
             .eraseToAnyPublisher()
     }
     
     private func createRequest(for url: URL, data: Data) -> URLRequest {
         var request = URLRequest(url: url)
+        print(url)
         request.httpMethod = "POST"
         request.httpBody = data
         return request

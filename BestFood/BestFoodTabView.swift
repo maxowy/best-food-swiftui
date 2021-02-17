@@ -16,7 +16,7 @@ struct BestFoodTabView: View {
                     Image(systemName: "list.dash")
                     Text("Food")
                 }
-            OrderView(viewModel: OrderViewModel())
+            OrderView(viewModel: OrderViewModel(foodService: HttpFoodService()))
                 .tabItem {
                     Image(systemName: "bag")
                     Text("Order")

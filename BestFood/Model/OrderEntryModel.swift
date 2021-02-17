@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct OrderEntryModel: Identifiable {
+struct OrderEntryModel: Identifiable, Codable {
     
     let id: Int
     let name: String

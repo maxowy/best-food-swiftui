@@ -27,7 +27,7 @@ struct OrderView: View {
                         .onDelete(perform: order.removeEntry)
                     }
                     Spacer()
-                    Button { print("Ok") }
+                    Button { viewModel.place(order)}
                         label: {
                             Text("Place order \(viewModel.getTotalValue(order: order))")
                                 .fontWeight(.bold)
@@ -51,7 +51,7 @@ struct OrderView: View {
 struct OrderView_Previews: PreviewProvider {
     
     static var previews: some View {
-        OrderView(viewModel: OrderViewModel())
+        OrderView(viewModel: OrderViewModel(foodService: FakeFoodService()))
     }
     
 }

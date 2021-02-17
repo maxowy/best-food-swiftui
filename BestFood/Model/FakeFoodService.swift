@@ -8,6 +8,12 @@
 import Combine
 
 struct FakeFoodService: FoodService {
+  
+    func place(order: OrderModel) -> AnyPublisher<Void, HttpClientError> {
+        Empty()
+            .setFailureType(to: HttpClientError.self)
+            .eraseToAnyPublisher()
+    }
     
     func getFood() -> AnyPublisher<[FoodModel], HttpClientError> {
         Just([
