@@ -12,6 +12,7 @@ enum HttpClientError: Error {
     
     case invalidUrl
     case requestFailed
+    case encodingFailed
     
 }
 
@@ -29,7 +30,11 @@ extension URLSession {
     }
     
     func post<Body: Codable, Response: Decodable>(to urlString: String, body: Body,encoder: JSONEncoder = JSONEncoder(), decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response, HttpClientError> {
-        url(urlString)
+        let requestUrl = url(urlString)
+        let encocedBody = Just(body).encode(encoder: encoder)
+            .mapError { _ in HttpClientError.encodingFailed }
+            .eraseToAnyPublisher()
+        requestUrl.zip(encocedBody)
         
         //            .map {
         //                let request = URLRequest(url: $0)
