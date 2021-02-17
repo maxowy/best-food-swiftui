@@ -14,8 +14,8 @@ struct HttpFoodService: FoodService {
         URLSession.shared.get(from: "https://raw.githubusercontent.com/landrzejewski/best-food-swiftui/main/extras/data.json")
     }
     
-    func place(order: OrderModel) -> AnyPublisher<Void, HttpClientError> {
-        URLSession.shared.post(to: "http://fullstack-developer.io/orders", body: OrderRequest(entries: order.entries))
+    func place(order: [OrderEntryModel]) -> AnyPublisher<Void, HttpClientError> {
+        URLSession.shared.post(to: "http://fullstack-developer.io/orders", body: OrderRequest(entries: order))
     }
     
 }

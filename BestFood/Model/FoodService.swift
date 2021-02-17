@@ -11,6 +11,6 @@ protocol FoodService {
     
     func getFood() -> AnyPublisher<[FoodModel], HttpClientError>
     
-    func place(order: OrderModel) -> AnyPublisher<Void, HttpClientError>
+    func place(order: [OrderEntryModel]) -> AnyPublisher<Void, HttpClientError>
     
 }

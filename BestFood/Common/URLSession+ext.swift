@@ -37,7 +37,7 @@ extension URLSession {
                     .mapError { _ in HttpClientError.requestFailed }
                     .receive(on: DispatchQueue.main)
             }
-            .map { _ in Empty<Void, HttpClientError>() }
+            .map { _ in }
             .eraseToAnyPublisher()
     }
     
