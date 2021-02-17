@@ -15,7 +15,7 @@ struct HttpFoodService: FoodService {
     }
     
     func place(order: OrderModel) -> AnyPublisher<Void, HttpClientError> {
-        URLSession.shared.post(to: "http://fullstack-developer.io/orders", body: [order.entries])
+        URLSession.shared.post(to: "http://fullstack-developer.io/orders", body: OrderRequest(entries: order.entries))
     }
     
 }

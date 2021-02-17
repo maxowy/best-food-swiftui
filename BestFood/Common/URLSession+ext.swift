@@ -35,7 +35,6 @@ extension URLSession {
             .flatMap { [self] (request: URLRequest) in
                 dataTaskPublisher(for: request)
                     .mapError { _ in HttpClientError.requestFailed }
-                    .print()
                     .receive(on: DispatchQueue.main)
             }
             .map { _ in Empty<Void, HttpClientError>() }
@@ -44,7 +43,6 @@ extension URLSession {
     
     private func createRequest(for url: URL, data: Data) -> URLRequest {
         var request = URLRequest(url: url)
-        print(url)
         request.httpMethod = "POST"
         request.httpBody = data
         return request

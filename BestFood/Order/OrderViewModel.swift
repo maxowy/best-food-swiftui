@@ -28,7 +28,9 @@ final class OrderViewModel: ObservableObject {
     
     func place(_ order: OrderModel) {
         foodService.place(order: order)
-            .sink(receiveCompletion: { print($0) }, receiveValue: {})
+            .sink(receiveCompletion: {
+                
+            }, receiveValue: {})
             .store(in: &subscriptions)
     }
     

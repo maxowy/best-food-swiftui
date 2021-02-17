@@ -30,6 +30,7 @@
 		B2C0108325DD2B77001CEC01 /* OrderEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C0108225DD2B77001CEC01 /* OrderEntryModel.swift */; };
 		B2C0108B25DD2C15001CEC01 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C0108A25DD2C15001CEC01 /* OrderModel.swift */; };
 		B2C0109025DD32EE001CEC01 /* URLSession+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C0108F25DD32EE001CEC01 /* URLSession+ext.swift */; };
+		B2C0109525DD51F0001CEC01 /* OrderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C0109425DD51F0001CEC01 /* OrderRequest.swift */; };
 		B2E9037F25DBF72F00A69C8A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9037E25DBF72F00A69C8A /* ProfileViewModel.swift */; };
 		B2E9038425DBFB7700A69C8A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9038325DBFB7700A69C8A /* EmptyView.swift */; };
 		B2E9038925DBFD2400A69C8A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9038825DBFD2400A69C8A /* ImageLoader.swift */; };
@@ -85,6 +86,7 @@
 		B2C0108225DD2B77001CEC01 /* OrderEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntryModel.swift; sourceTree = "<group>"; };
 		B2C0108A25DD2C15001CEC01 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		B2C0108F25DD32EE001CEC01 /* URLSession+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ext.swift"; sourceTree = "<group>"; };
+		B2C0109425DD51F0001CEC01 /* OrderRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequest.swift; sourceTree = "<group>"; };
 		B2E9037E25DBF72F00A69C8A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		B2E9038325DBFB7700A69C8A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B2E9038825DBFD2400A69C8A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				B2E903B025DC0E9200A69C8A /* HttpFoodService.swift */,
 				B2C0108225DD2B77001CEC01 /* OrderEntryModel.swift */,
 				B2C0108A25DD2C15001CEC01 /* OrderModel.swift */,
+				B2C0109425DD51F0001CEC01 /* OrderRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				B2C0109025DD32EE001CEC01 /* URLSession+ext.swift in Sources */,
 				B2041B2C25DBDFD7001213CB /* ActivityIndicatorView.swift in Sources */,
 				B2041B0D25DBCBFF001213CB /* FoodListViewModel.swift in Sources */,
+				B2C0109525DD51F0001CEC01 /* OrderRequest.swift in Sources */,
 				B2041B1D25DBCE30001213CB /* FoodView.swift in Sources */,
 				B2041B3925DBE509001213CB /* OrderViewModel.swift in Sources */,
 				B2041B0025DBC9AE001213CB /* FakeFoodService.swift in Sources */,
