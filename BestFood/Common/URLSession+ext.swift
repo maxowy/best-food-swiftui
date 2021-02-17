@@ -29,18 +29,30 @@ extension URLSession {
         .eraseToAnyPublisher()
     }
     
-    func post<Body: Codable, Response: Decodable>(to urlString: String, body: Body,encoder: JSONEncoder = JSONEncoder(), decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response, HttpClientError> {
-        let requestUrl = url(urlString)
-        let encocedBody = Just(body).encode(encoder: encoder)
+    func post<Body: Encodable, Response: Decodable>(to urlString: String, body: Body, encoder: JSONEncoder = JSONEncoder(), decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response, HttpClientError> {
+        return url(urlString).zip(encode(body: body, encoder: encoder))
+            .map(createRequest(for:data:))
+            .flatMap { [self] (request: URLRequest) in
+                dataTaskPublisher(for: request)
+                    .map { $0.data }
+                    .decode(type: Response.self, decoder: decoder)
+                    .mapError { _ in HttpClientError.requestFailed }
+                    .receive(on: DispatchQueue.main)
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private func createRequest(for url: URL, data: Data) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = data
+        return request
+    }
+    
+    private func encode<Body: Encodable>(body: Body, encoder: JSONEncoder) -> AnyPublisher<Data, HttpClientError> {
+        Just(body).encode(encoder: encoder)
             .mapError { _ in HttpClientError.encodingFailed }
             .eraseToAnyPublisher()
-        requestUrl.zip(encocedBody)
-        
-        //            .map {
-        //                let request = URLRequest(url: $0)
-        //                request.httpMethod = "POST"
-        //            }
-        
     }
     
     private func url(_ urlString: String) -> AnyPublisher<URL, HttpClientError> {
