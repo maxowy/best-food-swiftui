@@ -26,7 +26,7 @@ final class ProfileViewModel: ObservableObject {
     
     init() {
         Publishers.CombineLatest3(
-            emailIsValid()
+            emailIsValid(),
             passwordIsValid(),
             passwordMatchesConfirmation
         )

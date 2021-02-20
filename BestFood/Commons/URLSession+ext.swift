@@ -45,7 +45,7 @@ extension URLSession {
                 .eraseToAnyPublisher()
         }
         return send(request)
-            .decode(type: Response.self, decoder: JSONDecoder())
+            .decode(type: Response.self, decoder: decoder)
             .mapError { _ in RequestError.decodingFailed }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
@@ -75,7 +75,7 @@ extension URLSession {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         return send(request)
-            .decode(type: Response.self, decoder: JSONDecoder())
+            .decode(type: Response.self, decoder: decoder)
             .mapError { _ in RequestError.decodingFailed }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
