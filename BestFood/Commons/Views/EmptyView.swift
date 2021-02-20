@@ -17,11 +17,12 @@ struct EmptyView: View {
             Color(.systemBackground)
             VStack {
                 Image(systemName: imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 120)
+                    .coloredIcon(width: 120, height: 120, color: Color.primary, opacity: 0.3)
                 Text(message)
-                    .padding()
+                    .font(.title2)
+                    .frame(maxWidth: 200)
+                    .foregroundColor(Color.primary)
+                    .opacity(0.3)
             }
         }
     }
@@ -31,7 +32,7 @@ struct EmptyView: View {
 struct EmptyView_Previews: PreviewProvider {
     
     static var previews: some View {
-        EmptyView(imageName: "cart", message: "No data")
+        EmptyView(imageName: "cart", message: "Your order is empty. Add some products.")
     }
     
 }

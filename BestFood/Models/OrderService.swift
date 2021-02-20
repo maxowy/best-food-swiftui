@@ -1,5 +1,5 @@
 //
-//  OrderModel.swift
+//  OrderService.swift
 //  BestFood
 //
 //  Created by Łukasz Andrzejewski on 17/02/2021.
@@ -8,28 +8,22 @@
 import Foundation
 import Combine
 
-final class OrderModel: ObservableObject {
+final class OrderService: ObservableObject {
     
     @Published var entries:[OrderEntryModel] = []
     
-    let foodService: FoodService
-    
     private var subscriptions = Set<AnyCancellable>()
-    
-    init(foodService: FoodService) {
-        self.foodService = foodService
-    }
-    
-    func addEntry(_ entry: OrderEntryModel) {
+
+    func add(entry: OrderEntryModel) {
         entries.append(entry)
     }
     
-    func removeEntry(indexSet: IndexSet){
+    func remove(entriesWith indexSet: IndexSet){
         entries.remove(atOffsets: indexSet)
     }
     
-    func place() {
-        foodService.place(order: entries)
+    func confirm() {
+        URLSession.shared.request(for: "http://fullstack-developer.io/orders", payload: OrderModel(entries: entries))
             .sink(receiveCompletion: { [self] completion in
                 switch completion {
                 case .finished:

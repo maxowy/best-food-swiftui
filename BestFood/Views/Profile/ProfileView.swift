@@ -27,6 +27,10 @@ struct ProfileView: View {
                     Toggle("Subscriber:", isOn: $viewModel.subscriber)
                         .toggleStyle(SwitchToggleStyle(tint: .primary))
                 }
+                if !viewModel.isFormValid {
+                    Text("Please fill the form corectly")
+                        .foregroundColor(.red)
+                }
                 if viewModel.subscriber {
                     Section(header: Text("Payments info")) {
                         TextField("Card number", text: $viewModel.cardNumber)
@@ -35,7 +39,6 @@ struct ProfileView: View {
                     }
                 }
             }
-            .border(viewModel.isValid ? Color.black : Color.red)
             .navigationTitle("Profile")
         }
         

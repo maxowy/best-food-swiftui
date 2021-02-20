@@ -20,36 +20,31 @@ final class ProfileViewModel: ObservableObject {
     @Published var cardNumber = ""
     @Published var cardCvv = ""
     @Published var cardExpirationDate = Date()
-    @Published var isValid = false
+    @Published var isFormValid = false
     
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        Publishers.CombineLatest(
-            $email.map(isEmailValid),
-            passwordIsValid().combineLatest(passwordMatchesConfirmation).map { $0 && $1 }
+        Publishers.CombineLatest3(
+            emailIsValid()
+            passwordIsValid(),
+            passwordMatchesConfirmation
         )
         .debounce(for: .microseconds(500), scheduler: RunLoop.main)
-        .map { $0 && $1 }
-        .assign(to: &$isValid)
+        .map { $0 && $1 && $2}
+        .assign(to: &$isFormValid)
     }
     
-    private func isEmailValid(_ email: String) -> Bool {
-        email.contains("@") && email.contains(".")
-    }
-    
-    private func isPasswordValid(_ password: String) -> Bool {
-        password.count > 6
+    private func emailIsValid() -> AnyPublisher<Bool, Never>  {
+        $email.map { $0.contains("@") && $0.contains(".") }.eraseToAnyPublisher()
     }
     
     private func passwordIsValid() -> AnyPublisher<Bool, Never> {
-        $password.map(isPasswordValid).eraseToAnyPublisher()
+        $password.map { $0.count > 6 }.eraseToAnyPublisher()
     }
     
     private var passwordMatchesConfirmation: AnyPublisher<Bool, Never> {
-        $password.combineLatest($passwordConfirmation)
-            .map { $0 == $1 }
-            .eraseToAnyPublisher()
+        $password.combineLatest($passwordConfirmation).map { $0 == $1 }.eraseToAnyPublisher()
     }
 
 }

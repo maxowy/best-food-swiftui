@@ -13,8 +13,8 @@ final class ImageLoader {
     private static var cache = NSCache<NSString, UIImage>()
     
     func get(from urlString: String, callback: @escaping (UIImage?) -> ()) {
-        let cacheKey = NSString(string: urlString)
-        if let image = ImageLoader.cache.object(forKey: cacheKey) {
+        let key = NSString(string: urlString)
+        if let image = ImageLoader.cache.object(forKey: key) {
             callback(image)
             return
         }
@@ -27,7 +27,7 @@ final class ImageLoader {
                 callback(nil)
                 return
             }
-            ImageLoader.cache.setObject(image, forKey: cacheKey)
+            ImageLoader.cache.setObject(image, forKey: key)
             callback(image)
         }.resume()
     }

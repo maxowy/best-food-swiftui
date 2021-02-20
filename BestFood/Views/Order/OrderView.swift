@@ -10,7 +10,7 @@ import SwiftUI
 struct OrderView: View {
     
     @ObservedObject var viewModel: OrderViewModel
-    @EnvironmentObject var order: OrderModel
+    @EnvironmentObject var order: OrderService
     
     var body: some View {
         NavigationView {
@@ -24,10 +24,10 @@ struct OrderView: View {
                                 Text(viewModel.formatPrice(entry.price))
                             }
                         }
-                        .onDelete(perform: order.removeEntry)
+                        .onDelete(perform: order.remove(entriesWith:))
                     }
                     Spacer()
-                    Button { order.place()}
+                    Button { order.confirm()}
                         label: {
                             Text("Place order \(viewModel.getTotalValue(order: order))")
                                 .fontWeight(.bold)
@@ -40,7 +40,7 @@ struct OrderView: View {
                 }
                 .navigationTitle("Order")
                 if order.entries.isEmpty {
-                    EmptyView(imageName: "cart", message: "No items found")
+                    EmptyView(imageName: "cart", message: "Your order is empty. Add some products.")
                 }
             }
         }
