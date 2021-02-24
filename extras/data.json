@@ -23,6 +23,10 @@
     {
       "{\"entries\":[{\"id\":1,\"name\":\"Asparagus steak\",\"price\":120.5}]}": "",
       "id": 2
+    },
+    {
+      "{\"entries\":[{\"id\":1,\"name\":\"Asparagus steak\",\"price\":120.5}]}": "",
+      "id": 3
     }
   ]
 }
