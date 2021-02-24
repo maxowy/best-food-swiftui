@@ -86,6 +86,13 @@
 		B2041B2B25DBDFD7001213CB /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		B2041B3025DBE145001213CB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B2041B3825DBE509001213CB /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		B224E92F25E2D621005D6195 /* asparagus-steak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asparagus-steak.png"; sourceTree = "<group>"; };
+		B224E93025E2D621005D6195 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		B224E93125E2D621005D6195 /* salmon-teriyaki-fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "salmon-teriyaki-fish.png"; sourceTree = "<group>"; };
+		B224E93225E2D621005D6195 /* big-burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big-burger.png"; sourceTree = "<group>"; };
+		B224E93325E2D621005D6195 /* healthy-pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "healthy-pizza.png"; sourceTree = "<group>"; };
+		B224E93425E2D621005D6195 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		B224E93825E2D8D7005D6195 /* run.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run.sh; sourceTree = "<group>"; };
 		B2C0108225DD2B77001CEC01 /* OrderEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntryModel.swift; sourceTree = "<group>"; };
 		B2C0108A25DD2C15001CEC01 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		B2C0108F25DD32EE001CEC01 /* URLSession+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ext.swift"; sourceTree = "<group>"; };
@@ -162,6 +169,7 @@
 			children = (
 				B2C0109925DD579D001CEC01 /* ToDo */,
 				B2041AAB25DBC466001213CB /* BestFood */,
+				B224E92D25E2D621005D6195 /* extras */,
 				B2041ABD25DBC467001213CB /* BestFoodTests */,
 				B2041AC825DBC467001213CB /* BestFoodUITests */,
 				B2041AAA25DBC466001213CB /* Products */,
@@ -278,6 +286,28 @@
 				B2C0108A25DD2C15001CEC01 /* OrderService.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B224E92D25E2D621005D6195 /* extras */ = {
+			isa = PBXGroup;
+			children = (
+				B224E92E25E2D621005D6195 /* images */,
+				B224E93425E2D621005D6195 /* data.json */,
+				B224E93825E2D8D7005D6195 /* run.sh */,
+			);
+			path = extras;
+			sourceTree = SOURCE_ROOT;
+		};
+		B224E92E25E2D621005D6195 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B224E92F25E2D621005D6195 /* asparagus-steak.png */,
+				B224E93025E2D621005D6195 /* placeholder.png */,
+				B224E93125E2D621005D6195 /* salmon-teriyaki-fish.png */,
+				B224E93225E2D621005D6195 /* big-burger.png */,
+				B224E93325E2D621005D6195 /* healthy-pizza.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -11,7 +11,7 @@ import Combine
 struct HttpFoodService: FoodService {
  
     func getFood() -> AnyPublisher<[FoodModel], RequestError> {
-        URLSession.shared.request(for: "https://raw.githubusercontent.com/landrzejewski/best-food-swiftui/main/extras/data.json")
+        URLSession.shared.request(for: "http://192.168.64.1:3000/orders")
     }
     
 }
