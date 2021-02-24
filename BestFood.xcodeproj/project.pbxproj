@@ -59,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8018F26125E655C000AF3D96 /* restaurant3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = restaurant3.jpg; sourceTree = "<group>"; };
+		8018F26225E655C000AF3D96 /* restaurant1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = restaurant1.jpg; sourceTree = "<group>"; };
+		8018F26325E655C000AF3D96 /* restaurant2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = restaurant2.jpg; sourceTree = "<group>"; };
 		80D9C86925E1195700B81B99 /* Image+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+ext.swift"; sourceTree = "<group>"; };
 		B2041AA925DBC466001213CB /* BestFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2041AAC25DBC466001213CB /* BestFoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFoodApp.swift; sourceTree = "<group>"; };
@@ -301,6 +304,9 @@
 		B224E92E25E2D621005D6195 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8018F26225E655C000AF3D96 /* restaurant1.jpg */,
+				8018F26325E655C000AF3D96 /* restaurant2.jpg */,
+				8018F26125E655C000AF3D96 /* restaurant3.jpg */,
 				B224E92F25E2D621005D6195 /* asparagus-steak.png */,
 				B224E93025E2D621005D6195 /* placeholder.png */,
 				B224E93125E2D621005D6195 /* salmon-teriyaki-fish.png */,
