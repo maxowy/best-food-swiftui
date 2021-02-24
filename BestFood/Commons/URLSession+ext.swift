@@ -38,6 +38,8 @@ extension URLSession {
         }
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         do {
             request.httpBody =  try encoder.encode(payload)
         } catch {
@@ -57,6 +59,8 @@ extension URLSession {
         }
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         do {
             request.httpBody =  try encoder.encode(payload)
         } catch {
@@ -74,6 +78,8 @@ extension URLSession {
         }
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         return send(request)
             .decode(type: Response.self, decoder: decoder)
             .mapError { _ in RequestError.decodingFailed }
