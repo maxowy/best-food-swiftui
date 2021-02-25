@@ -11,6 +11,11 @@ struct BestFoodTabView: View {
     
     var body: some View {
         TabView {
+            RestaurantsView(viewModel: RestaurantsViewModel(restaurantsService: RestaurantService()))
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Restaurants")
+                }
             FoodListView(viewModel: FoodListViewModel(foodService: HttpFoodService()))
                 .tabItem {
                     Image(systemName: "list.dash")

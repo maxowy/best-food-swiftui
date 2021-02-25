@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     
     @ObservedObject var viewModel: ProfileViewModel
+    @EnvironmentObject var userService: UserService
     
     var body: some View {
         NavigationView {
@@ -40,6 +41,9 @@ struct ProfileView: View {
                 }
             }
             .navigationTitle("Profile")
+            .toolbar {
+                Button("Wyloguj") { userService.logout() }
+            }
         }
         
     }

@@ -28,6 +28,14 @@
 		B2041B2C25DBDFD7001213CB /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2041B2B25DBDFD7001213CB /* ActivityIndicatorView.swift */; };
 		B2041B3125DBE145001213CB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2041B3025DBE145001213CB /* LoadingView.swift */; };
 		B2041B3925DBE509001213CB /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2041B3825DBE509001213CB /* OrderViewModel.swift */; };
+		B222AE9125E78A1E00589D3C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AE9025E78A1E00589D3C /* UserService.swift */; };
+		B222AE9725E78AD200589D3C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AE9625E78AD200589D3C /* LoginView.swift */; };
+		B222AE9C25E78B4900589D3C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AE9B25E78B4900589D3C /* MainView.swift */; };
+		B222AEA125E78C0300589D3C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AEA025E78C0300589D3C /* LoginViewModel.swift */; };
+		B222AEA625E7907B00589D3C /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AEA525E7907B00589D3C /* RestaurantModel.swift */; };
+		B222AEAB25E7912400589D3C /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AEAA25E7912400589D3C /* RestaurantService.swift */; };
+		B222AEB125E792A400589D3C /* RestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AEB025E792A400589D3C /* RestaurantsView.swift */; };
+		B222AEB625E7932C00589D3C /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B222AEB525E7932C00589D3C /* RestaurantsViewModel.swift */; };
 		B2C0108325DD2B77001CEC01 /* OrderEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C0108225DD2B77001CEC01 /* OrderEntryModel.swift */; };
 		B2C0108B25DD2C15001CEC01 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C0108A25DD2C15001CEC01 /* OrderService.swift */; };
 		B2C0109025DD32EE001CEC01 /* URLSession+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C0108F25DD32EE001CEC01 /* URLSession+ext.swift */; };
@@ -89,6 +97,14 @@
 		B2041B2B25DBDFD7001213CB /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		B2041B3025DBE145001213CB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B2041B3825DBE509001213CB /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		B222AE9025E78A1E00589D3C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		B222AE9625E78AD200589D3C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B222AE9B25E78B4900589D3C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B222AEA025E78C0300589D3C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B222AEA525E7907B00589D3C /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
+		B222AEAA25E7912400589D3C /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		B222AEB025E792A400589D3C /* RestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsView.swift; sourceTree = "<group>"; };
+		B222AEB525E7932C00589D3C /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
 		B224E92F25E2D621005D6195 /* asparagus-steak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asparagus-steak.png"; sourceTree = "<group>"; };
 		B224E93025E2D621005D6195 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		B224E93125E2D621005D6195 /* salmon-teriyaki-fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "salmon-teriyaki-fish.png"; sourceTree = "<group>"; };
@@ -160,10 +176,13 @@
 		80D9C88625E13C6B00B81B99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B222AE9525E78ABB00589D3C /* Authentication */,
+				B222AEAF25E7928900589D3C /* Restaurants */,
 				B2041ADA25DBC4D9001213CB /* Food */,
 				B2041ADB25DBC4EC001213CB /* Order */,
 				B2041ADC25DBC4FB001213CB /* Profile */,
 				B2041AAE25DBC466001213CB /* BestFoodTabView.swift */,
+				B222AE9B25E78B4900589D3C /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,8 +306,29 @@
 				B2C0108225DD2B77001CEC01 /* OrderEntryModel.swift */,
 				B2C0109425DD51F0001CEC01 /* OrderModel.swift */,
 				B2C0108A25DD2C15001CEC01 /* OrderService.swift */,
+				B222AE9025E78A1E00589D3C /* UserService.swift */,
+				B222AEA525E7907B00589D3C /* RestaurantModel.swift */,
+				B222AEAA25E7912400589D3C /* RestaurantService.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B222AE9525E78ABB00589D3C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B222AE9625E78AD200589D3C /* LoginView.swift */,
+				B222AEA025E78C0300589D3C /* LoginViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		B222AEAF25E7928900589D3C /* Restaurants */ = {
+			isa = PBXGroup;
+			children = (
+				B222AEB025E792A400589D3C /* RestaurantsView.swift */,
+				B222AEB525E7932C00589D3C /* RestaurantsViewModel.swift */,
+			);
+			path = Restaurants;
 			sourceTree = "<group>";
 		};
 		B224E92D25E2D621005D6195 /* extras */ = {
@@ -446,6 +486,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B222AE9125E78A1E00589D3C /* UserService.swift in Sources */,
+				B222AE9725E78AD200589D3C /* LoginView.swift in Sources */,
 				B2041AE825DBC6E0001213CB /* FoodListView.swift in Sources */,
 				B2041B2725DBD8DB001213CB /* FoodCardView.swift in Sources */,
 				80D9C86A25E1195700B81B99 /* Image+ext.swift in Sources */,
@@ -454,15 +496,20 @@
 				B2041B2225DBCE6E001213CB /* FoodViewModel.swift in Sources */,
 				B2C0109025DD32EE001CEC01 /* URLSession+ext.swift in Sources */,
 				B2041B2C25DBDFD7001213CB /* ActivityIndicatorView.swift in Sources */,
+				B222AEA625E7907B00589D3C /* RestaurantModel.swift in Sources */,
 				B2041B0D25DBCBFF001213CB /* FoodListViewModel.swift in Sources */,
 				B2C0109525DD51F0001CEC01 /* OrderModel.swift in Sources */,
 				B2041B1D25DBCE30001213CB /* FoodView.swift in Sources */,
+				B222AE9C25E78B4900589D3C /* MainView.swift in Sources */,
 				B2041B3925DBE509001213CB /* OrderViewModel.swift in Sources */,
 				B2041B0025DBC9AE001213CB /* FakeFoodService.swift in Sources */,
 				B2E9038925DBFD2400A69C8A /* ImageLoader.swift in Sources */,
+				B222AEA125E78C0300589D3C /* LoginViewModel.swift in Sources */,
 				B2C0108325DD2B77001CEC01 /* OrderEntryModel.swift in Sources */,
 				B2041B3125DBE145001213CB /* LoadingView.swift in Sources */,
 				B2E9038425DBFB7700A69C8A /* EmptyView.swift in Sources */,
+				B222AEB625E7932C00589D3C /* RestaurantsViewModel.swift in Sources */,
+				B222AEAB25E7912400589D3C /* RestaurantService.swift in Sources */,
 				B2041AAD25DBC466001213CB /* BestFoodApp.swift in Sources */,
 				B2041B0525DBCA95001213CB /* FoodService.swift in Sources */,
 				B2C0108B25DD2C15001CEC01 /* OrderService.swift in Sources */,
@@ -473,6 +520,7 @@
 				B2041AF225DBC755001213CB /* ProfileView.swift in Sources */,
 				B2041AED25DBC738001213CB /* OrderView.swift in Sources */,
 				B2041AF825DBC917001213CB /* FoodModel.swift in Sources */,
+				B222AEB125E792A400589D3C /* RestaurantsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

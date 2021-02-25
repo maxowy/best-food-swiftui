@@ -28,5 +28,13 @@
       "{\"entries\":[{\"id\":1,\"name\":\"Asparagus steak\",\"price\":120.5}]}": "",
       "id": 3
     }
+  ],
+  "restaurants": [
+      {
+          "id": 1,
+          "imageUrl": "https://github.com/landrzejewski/best-food-swiftui/blob/main/extras/images/restaurant1.jpg?raw=true",
+          "name": "Hot Burger",
+          "comments": []
+      }
   ]
 }
