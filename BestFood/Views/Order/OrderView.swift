@@ -10,26 +10,26 @@ import SwiftUI
 struct OrderView: View {
     
     @ObservedObject var viewModel: OrderViewModel
-    @EnvironmentObject var order: OrderService
+    @EnvironmentObject var orderService: OrderService
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     List {
-                        ForEach(order.entries) { entry in
+                        ForEach(orderService.order.entries) { entry in
                             HStack {
                                 Text(entry.name)
                                 Spacer()
                                 Text(viewModel.formatPrice(entry.price))
                             }
                         }
-                        .onDelete(perform: order.remove(entriesWith:))
+                        .onDelete { orderService.order.remove(entriesWith: $0) }
                     }
                     Spacer()
-                    Button { order.confirm()}
+                    Button { orderService.confirm()}
                         label: {
-                            Text("Place order \(viewModel.getTotalValue(order: order))")
+                            Text("Place order \(viewModel.getTotalValue(orderService: orderService))")
                                 .fontWeight(.bold)
                                 .frame(width: 200, height: 40)
                                 .foregroundColor(.white)
@@ -39,7 +39,7 @@ struct OrderView: View {
                         .padding()
                 }
                 .navigationTitle("Order")
-                if order.entries.isEmpty {
+                if orderService.order.entries.isEmpty {
                     EmptyView(imageName: "cart", message: "Your order is empty. Add some products.")
                 }
             }

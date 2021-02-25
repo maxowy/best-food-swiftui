@@ -11,7 +11,7 @@ struct FoodCardView: View {
     
     let viewModel: FoodViewModel
     @Binding var isVisible: Bool
-    @EnvironmentObject var order: OrderService
+    @EnvironmentObject var orderService: OrderService
     
     var body: some View {
         VStack {
@@ -30,7 +30,7 @@ struct FoodCardView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.primary)
             Button {
-                order.add(entry: viewModel.orderEntry)
+                orderService.order.add(entry: viewModel.orderEntry)
                 isVisible = false
             } label: {
                 Text("Add to cart")
