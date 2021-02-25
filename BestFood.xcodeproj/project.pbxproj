@@ -152,6 +152,7 @@
 			children = (
 				B2041AE225DBC5F6001213CB /* Color+ext.swift */,
 				80D9C86925E1195700B81B99 /* Image+ext.swift */,
+				B2C0108F25DD32EE001CEC01 /* URLSession+ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,7 +273,6 @@
 			children = (
 				80D9C86825E1193F00B81B99 /* Extensions */,
 				80D9C85825E1179C00B81B99 /* Views */,
-				B2C0108F25DD32EE001CEC01 /* URLSession+ext.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
